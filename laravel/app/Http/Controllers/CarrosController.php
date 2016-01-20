@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Models\Painel\Carro;
 
 
 class CarrosController extends Controller
@@ -10,7 +11,7 @@ class CarrosController extends Controller
 
     public function getIndex(){
 
-        $carros =DB::table('carros')->get();
+        $carros = Carro::get();
 
         return view('painel.carros.index', compact('carros'));
     }
